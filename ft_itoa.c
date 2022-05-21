@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:58:48 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/19 21:21:05 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/20 21:32:34 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static size_t	ft_nbrlen(int n)
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	size_t			b_size;
+	char		*str;
+	size_t		b_size;
 	unsigned int	power;
 	unsigned int	i;
 	
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 		*(str + i) = '-';
 		i++;
 	}
-	while ((power = ft_nbrlen(n) - 1))
+	while ((power = ft_nbrlen(n) - 1) >= 1)
 	{
 		*(str + i) = ft_nbrtochr(n / ft_power(10, power));
 		if (power == 1)

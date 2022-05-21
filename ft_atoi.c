@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:06:17 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/19 22:01:35 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/21 09:31:56 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int	ft_atoi(const char *str)
 	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*(str) - '0');
-		str++;	
+		str++;
 	}
 	if (sign == '-')
-		result *= -1;	
+		result *= -1;
 	return (result);
 }

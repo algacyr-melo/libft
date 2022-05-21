@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 18:41:53 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/10 12:29:13 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/21 09:33:11 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *str;
+	char	*str;
 
 	str = s;
 	while (n)

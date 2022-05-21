@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:30:50 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/12 14:36:10 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/20 21:23:05 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const char			*str_src;
-	char				*str_dst;
-	char				*temp;
-	unsigned int		i;
+	char		*dst_c;
+	const char	*src_c;
 
-	str_src = src;
-	str_dst = dst;
-	temp = ft_strdup(str_src);
-	i = 0;
-	while (i < len)
+	dst_c = dst;
+	src_c = src;
+	if (dst_c < src_c)
+		ft_memcpy(dst, src, len);
+	else
 	{
-		*(str_dst + i) = *(temp + i);
-		i++;
+		dst_c += (len - 1);
+		src_c += (len - 1);
+		while (len--)
+			*dst_c-- = *src_c--;
 	}
-	free(temp);
 	return (dst);
 }
