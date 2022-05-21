@@ -4,7 +4,9 @@
 
 int	main(void)
 {
-	char	buffer_2[] = "bonjour";
+	char	s1[32] = "bonjour";
+	char	s2[] = "tra bien";
 
-	printf("%s\n", ft_strrchr(buffer_2, 'b'));
+	printf("%ld\n", ft_strlcat(s1, s2, 4));
+	printf("%s\n", s1);
 }
