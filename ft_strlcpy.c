@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:32:09 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/21 13:52:23 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:45:15 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,18 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
+	size_t	src_len;
 
-	i = 0;
-	while (i < (dstsize - 1) && *(src + i))
+	src_len = ft_strlen(src);
+	if (src_len + 1 < dstsize)
 	{
-		*(dst + i) = *(src + i);
-		i++;
+		ft_memcpy(dst, src, src_len + 1);
+		return (src_len);
 	}
-	*(dst + i) = '\0';
-	return (ft_strlen(src));
+	else if (dstsize != 0)
+	{
+		ft_memcpy(dst, src, dstsize - 1);
+		*(dst + (dstsize - 1)) = '\0';
+	}
+	return (src_len);
 }
