@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 09:09:44 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/23 15:11:00 by almelo           ###   ########.fr       */
+/*   Created: 2022/05/23 17:15:54 by almelo            #+#    #+#             */
+/*   Updated: 2022/05/23 18:02:47 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	len;
-	unsigned int	i;
-	unsigned int	offset;
+	t_list	*node;
 
-	len = ft_strlen(s);
-	i = 0;
-	while (i <= len)
-	{
-		offset = len - i;
-		if (*(s + offset) == c)
-			return ((char *)(s + offset));
-		i++;
-	}
+	node = malloc(sizeof(t_list));
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	t_list	*node;
+	char	*str;
+
+	str = "Hello!";
+	node = ft_lstnew(str);
+	printf("%s\n", node->content);	
 	return (0);
 }
+
