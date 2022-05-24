@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:07:38 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/17 15:08:29 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/24 09:59:42 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ char	**ft_split(char const *s, char c)
 			n_elem++;
 		i++;
 	}
-	arr = malloc(sizeof(char *) * n_elem);
+	arr = malloc(sizeof(char *) * (n_elem + 1));
 	i = 0;
 	arr_i = 0;
 	while (arr_i < n_elem)
 	{
-		*(arr + arr_i) = ft_strdup(ft_substr(s, i, ft_strflen(s + i, c)));
-		i += ft_strflen(*(arr + arr_i), '\0') + 1;
+		*(arr + arr_i) = ft_substr(s, i, ft_strflen(s + i, c));
+		i += ft_strlen(*(arr + arr_i)) + 1;
 		arr_i++;
 	}
 	*(arr + arr_i) = 0;
