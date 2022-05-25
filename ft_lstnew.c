@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 17:15:54 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/23 18:02:47 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/24 20:50:13 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*node;
 
 	node = malloc(sizeof(t_list));
-	node->content = content;
-	node->next = NULL;
+	(*node).content = content;
+	(*node).next = 0;
 	return (node);
 }
 
@@ -27,11 +27,16 @@ t_list	*ft_lstnew(void *content)
 int	main(void)
 {
 	t_list	*node;
-	char	*str;
+	int	*src;
+	int	*temp;
 
-	str = "Hello!";
-	node = ft_lstnew(str);
-	printf("%s\n", node->content);	
+	src = malloc(sizeof(*src) * 4);
+	*(src + 0) = 45;
+	*(src + 1) = 42;
+	*(src + 2) = 99;
+	*(src + 3) = 1;
+	node = ft_lstnew(src);
+	temp = node->content;
+	printf("%d\n", *(temp + 3));	
 	return (0);
 }
-
