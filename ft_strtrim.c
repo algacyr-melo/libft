@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:06:10 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/22 12:07:05 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/25 13:31:21 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static char	*ft_strrev(const char *str)
 	unsigned int	i;
 
 	s_copy = ft_strdup(str);
+	if (s_copy == 0)
+		return (0);
 	i = 0;
 	while (i < ft_strlen(str) / 2)
 	{

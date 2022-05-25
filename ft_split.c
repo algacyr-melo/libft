@@ -6,11 +6,12 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:07:38 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/24 19:50:35 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/25 16:03:50 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	ft_strflen(const char *str, char c)
 {
@@ -55,6 +56,8 @@ char	**ft_split(char const *s, char c)
 	unsigned int	arr_i;
 	unsigned int	n_elem;
 
+	if (!s)
+		return (0);
 	n_elem = ft_get_n_elem(s, c);
 	arr = malloc(sizeof(char *) * (n_elem + 1));
 	temp_s = ft_strtrim(s, &c);
@@ -72,3 +75,15 @@ char	**ft_split(char const *s, char c)
 	free(temp_s);
 	return (arr);
 }
+
+//int	main(void)
+//{
+//	char	**test;
+//	char	*str;
+//
+//	str = NULL;
+//	test = ft_split(str, '_');
+//	if (test)
+//		printf("%s\n", *(test + 0));
+//	return (0);
+//}
