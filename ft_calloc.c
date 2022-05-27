@@ -6,11 +6,8 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:29:46 by almelo            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/25 13:25:17 by almelo           ###   ########.fr       */
-=======
+/*   Updated: 2022/05/27 13:59:04 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 11:08:33 by almelo           ###   ########.fr       */
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +23,11 @@ void	*ft_calloc(size_t count, size_t size)
 		size = 1;
 	}
 	buffer = malloc(count * size);
-<<<<<<< HEAD
-	if (buffer == 0)
-=======
 	if (!buffer)
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 		return (0);
 	ft_bzero(buffer, (count * size));
 	return (buffer);
 }
-
 //int	main(void)
 //{
 //	void	*buffer;

@@ -6,11 +6,8 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:06:10 by almelo            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/25 13:31:21 by almelo           ###   ########.fr       */
-=======
+/*   Updated: 2022/05/27 14:07:00 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 15:20:39 by almelo           ###   ########.fr       */
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +20,7 @@ static char	*ft_strrev(const char *str)
 	unsigned int	i;
 
 	s_copy = ft_strdup(str);
-	if (s_copy == 0)
+	if (!s_copy)
 		return (0);
 	i = 0;
 	while (i < ft_strlen(str) / 2)
@@ -61,9 +58,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	l_offset;
 	unsigned int	r_offset;
 	size_t			t_len;
+	char			*buffer;
+	char			*rev_s1;
 
 	l_offset = ft_get_offset(s1, set);
-	r_offset = ft_get_offset(ft_strrev(s1), set);
+	rev_s1 = ft_strrev(s1);
+	if (!rev_s1)
+		return (0);
+	r_offset = ft_get_offset(rev_s1, set);
+	free(rev_s1);
 	t_len = ft_strlen(s1) - (l_offset + r_offset);
-	return (ft_substr(s1, l_offset, t_len));
+	buffer = ft_substr(s1, l_offset, t_len);
+	if (!buffer)
+		return (0);
+	return (buffer);
 }

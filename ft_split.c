@@ -6,11 +6,8 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:07:38 by almelo            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/05/25 16:03:50 by almelo           ###   ########.fr       */
-=======
+/*   Updated: 2022/05/27 13:46:26 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 17:04:10 by almelo           ###   ########.fr       */
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +56,8 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (0);
-<<<<<<< HEAD
-	n_elem = ft_get_n_elem(s, c);
-	arr = malloc(sizeof(char *) * (n_elem + 1));
-	temp_s = ft_strtrim(s, &c);
-=======
 	n_elem = ft_count_elem(s, c);
 	arr = ft_calloc((n_elem + 1), sizeof(char *));
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 	arr_i = 0;
 	i = 0;
 	while (arr_i < n_elem)
@@ -86,15 +77,6 @@ char	**ft_split(char const *s, char c)
 
 //int	main(void)
 //{
-<<<<<<< HEAD
-//	char	**test;
-//	char	*str;
-//
-//	str = NULL;
-//	test = ft_split(str, '_');
-//	if (test)
-//		printf("%s\n", *(test + 0));
-=======
 //	char	*str = "U_N_D_E_U_X_T_R_O_I_S";
 //	char	**arr;
 //	unsigned int	i;
@@ -107,6 +89,5 @@ char	**ft_split(char const *s, char c)
 //		i++;
 //	}
 //	free(arr);
->>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 //	return (0);
 //}

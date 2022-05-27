@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 11:16:51 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/12 11:58:37 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/27 17:45:46 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	unsigned int	i;
 	char			*str;
 
-	str = (char *) haystack;
-	if (!needle)
+	str = (char *)haystack;
+	if (*str == '\0' && *needle == '\0')
 		return (str);
 	i = 0;
 	while (*(str + i) && (i + ft_strlen(needle)) <= len)
