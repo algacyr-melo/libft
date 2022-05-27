@@ -6,7 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:07:38 by almelo            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/05/25 16:03:50 by almelo           ###   ########.fr       */
+=======
+/*   Updated: 2022/05/26 17:04:10 by almelo           ###   ########.fr       */
+>>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,61 +27,66 @@ static size_t	ft_strflen(const char *str, char c)
 	return (len);
 }
 
-static unsigned int	ft_get_n_elem(char const *s, char c)
+static unsigned int	ft_count_elem(char const *s, char c)
 {
 	unsigned int	n_elem;
 	unsigned int	i;
-	char			*temp_s;
+	int				flag;
 
+	flag = 1;
 	n_elem = 0;
 	i = 0;
-	temp_s = ft_strtrim(s + i, &c);
-	if (ft_strlen(temp_s) > 0)
-		n_elem++;
-	while (*(temp_s + i))
+	while (*(s + i))
 	{
-		if (*(temp_s + i) == c)
+		if (*(s + i) == c)
+			flag = 1;
+		else if (flag == 1)
 		{
-			temp_s = ft_strtrim(temp_s + i, &c);
 			n_elem++;
-			i = -1;
+			flag = 0;
 		}
 		i++;
 	}
-	free(temp_s);
 	return (n_elem);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char			**arr;
-	char			*temp_s;
 	unsigned int	i;
 	unsigned int	arr_i;
 	unsigned int	n_elem;
 
 	if (!s)
 		return (0);
+<<<<<<< HEAD
 	n_elem = ft_get_n_elem(s, c);
 	arr = malloc(sizeof(char *) * (n_elem + 1));
 	temp_s = ft_strtrim(s, &c);
+=======
+	n_elem = ft_count_elem(s, c);
+	arr = ft_calloc((n_elem + 1), sizeof(char *));
+>>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 	arr_i = 0;
 	i = 0;
 	while (arr_i < n_elem)
 	{
-		*(arr + arr_i) = ft_substr(temp_s + i, i, ft_strflen(temp_s + i, c));
-		i += ft_strlen(*(arr + arr_i));
-		temp_s = ft_strtrim(temp_s + i, &c);
-		i = 0;
-		arr_i++;
+		if (*(s + i) == c)
+			i++;
+		else
+		{	
+			*(arr + arr_i) = ft_substr(s, i, ft_strflen(s + i, c));
+			i += ft_strlen(*(arr + arr_i));
+			arr_i++;
+		}
 	}
 	*(arr + arr_i) = 0;
-	free(temp_s);
 	return (arr);
 }
 
 //int	main(void)
 //{
+<<<<<<< HEAD
 //	char	**test;
 //	char	*str;
 //
@@ -85,5 +94,19 @@ char	**ft_split(char const *s, char c)
 //	test = ft_split(str, '_');
 //	if (test)
 //		printf("%s\n", *(test + 0));
+=======
+//	char	*str = "U_N_D_E_U_X_T_R_O_I_S";
+//	char	**arr;
+//	unsigned int	i;
+//
+//	arr = ft_split(str, '_');
+//	i = 0;
+//	while (*(arr + i))
+//	{
+//		free(*(arr + i));
+//		i++;
+//	}
+//	free(arr);
+>>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 //	return (0);
 //}

@@ -6,7 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:06:10 by almelo            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/05/25 13:31:21 by almelo           ###   ########.fr       */
+=======
+/*   Updated: 2022/05/26 15:20:39 by almelo           ###   ########.fr       */
+>>>>>>> f00726c724ea07c3d8ecfdaa279bf51bdd75015a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,19 +39,19 @@ static char	*ft_strrev(const char *str)
 static unsigned int	ft_get_offset(char const *str, char const *set)
 {
 	unsigned int	offset;
-	unsigned int	i;
+	unsigned int	set_i;
 
 	offset = 0;
-	i = 0;
-	while (*(set + i))
+	set_i = 0;
+	while (*(set + set_i))
 	{
-		if (*(str + offset) == *(set + i))
+		if (*(str + offset) == *(set + set_i))
 		{
 			offset++;
-			i = 0;
+			set_i = 0;
 			continue ;
 		}
-		i++;
+		set_i++;
 	}
 	return (offset);
 }
@@ -56,10 +60,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	unsigned int	l_offset;
 	unsigned int	r_offset;
-	size_t			trimmed_len;
+	size_t			t_len;
 
 	l_offset = ft_get_offset(s1, set);
 	r_offset = ft_get_offset(ft_strrev(s1), set);
-	trimmed_len = ft_strlen(s1) - (l_offset + r_offset);
-	return (ft_substr(s1, l_offset, trimmed_len));
+	t_len = ft_strlen(s1) - (l_offset + r_offset);
+	return (ft_substr(s1, l_offset, t_len));
 }

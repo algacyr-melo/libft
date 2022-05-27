@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:48:19 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/23 21:57:18 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/26 17:08:35 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # define INT_MIN -2147483648 
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
