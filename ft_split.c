@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:07:38 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/26 16:52:47 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/26 17:04:10 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,15 @@ char	**ft_split(char const *s, char c)
 //{
 //	char	*str = "U_N_D_E_U_X_T_R_O_I_S";
 //	char	**arr;
+//	unsigned int	i;
 //
 //	arr = ft_split(str, '_');
-//	
+//	i = 0;
+//	while (*(arr + i))
+//	{
+//		free(*(arr + i));
+//		i++;
+//	}
 //	free(arr);
-//	printf("%s\n", *(arr + 1));
 //	return (0);
 //}
