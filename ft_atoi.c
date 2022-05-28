@@ -6,13 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 12:06:17 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/21 09:31:56 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/28 11:31:20 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(int c);
 
 static int	ft_isspace(int c)
 {

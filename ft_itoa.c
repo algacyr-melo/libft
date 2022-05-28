@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 10:58:48 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/22 15:26:01 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/28 17:37:35 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,23 @@ static size_t	ft_nbrlen(int n)
 	return (len);
 }
 
-static unsigned int	ft_gen_digits(int n, char *s)
+static void	ft_fill_buffer(char *buffer, int n, unsigned int is_negative)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (n > 0)
 	{
-		*(s + i) = (n % 10) + '0';
+		*(buffer + i) = (n % 10) + '0';
 		n /= 10;
 		i++;
 	}
-	return (i);
+	if (is_negative)
+	{
+		*(buffer + i) = '-';
+		i++;
+	}
+	*(buffer + i) = '\0';
 }
 
 static void	ft_strrev(char *s)
@@ -58,9 +63,8 @@ static void	ft_strrev(char *s)
 
 char	*ft_itoa(int n)
 {
-	char			*str;
-	size_t			b_size;
-	unsigned int	i;
+	char			*buffer;
+	size_t			b_len;
 	int				is_negative;
 
 	if (n == INT_MIN)
@@ -68,17 +72,16 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	is_negative = 0;
-	b_size = ft_nbrlen(n) + 1;
+	b_len = 0;
 	if (n < 0)
 	{
-		is_negative = 1;
 		n *= -1;
-		b_size++;
+		is_negative = 1;
+		b_len++;
 	}
-	str = malloc(b_size);
-	i = ft_gen_digits(n, str);
-	if (is_negative)
-		*(str + i) = '-';
-	ft_strrev(str);
-	return (str);
+	b_len += ft_nbrlen(n) + 1;
+	buffer = ft_calloc(b_len, sizeof(*buffer));
+	ft_fill_buffer(buffer, n, is_negative);
+	ft_strrev(buffer);
+	return (buffer);
 }

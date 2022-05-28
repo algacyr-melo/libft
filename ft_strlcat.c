@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:10:42 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/27 17:56:57 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/28 11:19:42 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	unsigned int		limit;
 
 	dst_len = ft_strlen(dst);
-	if (dstsize < 0)
-		dstsize = dst_len + ft_strlen(src) + 1;
-	else if (dstsize <= dst_len)
+	if (dstsize <= dst_len)
 		return (dstsize + ft_strlen(src));
 	limit = dstsize - dst_len - 1;
 	i = 0;

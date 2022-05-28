@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 12:06:10 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/27 14:07:00 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/28 11:36:35 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 15:20:39 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -66,7 +66,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!rev_s1)
 		return (0);
 	r_offset = ft_get_offset(rev_s1, set);
-	free(rev_s1);
 	t_len = ft_strlen(s1) - (l_offset + r_offset);
 	buffer = ft_substr(s1, l_offset, t_len);
 	if (!buffer)
