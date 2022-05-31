@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:29:46 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/30 22:36:14 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/31 17:55:47 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 11:08:33 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -22,6 +22,8 @@ void	*ft_calloc(size_t count, size_t size)
 		count = 1;
 		size = 1;
 	}
+	if (count >= SIZE_MAX && size >= SIZE_MAX)
+		return (0);
 	buffer = malloc(count * size);
 	if (!buffer)
 		return (0);
