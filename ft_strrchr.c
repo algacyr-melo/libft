@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 09:09:44 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/27 14:17:14 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 22:22:59 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 	while (i <= len)
 	{
 		offset = len - i;
-		if (*(s + offset) == (char)c)
+		if (*(s + offset) == (unsigned char)c)
 			return ((char *)(s + offset));
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:24:01 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/10 12:27:56 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 19:24:23 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*buffer;
+	char	*temp;
 
-	buffer = b;
+	temp = b;
 	while (len)
 	{
-		*buffer = (unsigned char) c;
-		buffer++;
+		*temp = (char)c;
+		temp++;
 		len--;
 	}
 	return (b);

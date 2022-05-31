@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:22:36 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/27 13:38:20 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 22:07:11 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 11:31:56 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -18,8 +18,6 @@ char	*ft_strdup(const char *s1)
 	char			*dup;
 	unsigned int	i;
 
-	dup = malloc(ft_strlen(s1) + 1);
-	if (dup == 0)
 	dup = ft_calloc(ft_strlen(s1) + 1, sizeof(*s1));
 	if (!dup)
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 13:29:46 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/27 13:59:04 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 22:36:14 by almelo           ###   ########.fr       */
 /*   Updated: 2022/05/26 11:08:33 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -28,11 +28,3 @@ void	*ft_calloc(size_t count, size_t size)
 	ft_bzero(buffer, (count * size));
 	return (buffer);
 }
-//int	main(void)
-//{
-//	void	*buffer;
-//
-//	buffer = ft_calloc(4, sizeof(char *));
-//	free(buffer);
-//	return (0);
-//}

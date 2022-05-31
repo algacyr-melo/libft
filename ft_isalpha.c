@@ -6,12 +6,9 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 17:26:20 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/10 12:04:19 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 18:28:12 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static int	ft_islower(int c);
-static int	ft_isupper(int c);
 
 static int	ft_islower(int c)
 {

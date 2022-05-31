@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 16:48:19 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/28 12:04:59 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 22:28:59 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # define INT_MIN -2147483648
+# define INT_MAX 2147483647
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

@@ -6,11 +6,9 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 16:28:30 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/10 16:32:06 by almelo           ###   ########.fr       */
+/*   Updated: 2022/05/30 21:25:32 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-static int	ft_isupper(int c);
 
 static int	ft_isupper(int c)
 {
