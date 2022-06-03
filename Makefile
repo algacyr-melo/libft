@@ -28,14 +28,14 @@ all: $(NAME)
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 clean:
-	$(RM) $(OBJECTS)
+	$(RM) $(OBJECTS) $(OBJECTS_BONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-bonus:
+bonus: $(OBJECTS_BONUS) libft.h
 	ar -r $(NAME) $(OBJECTS_BONUS)
 
 .PHONY: all clean fclean re
