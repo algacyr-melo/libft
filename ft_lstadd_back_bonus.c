@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:00:20 by almelo            #+#    #+#             */
-/*   Updated: 2022/06/06 16:55:49 by almelo           ###   ########.fr       */
+/*   Updated: 2022/06/06 22:34:43 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 	{
 		ft_lstlast(*lst)->next = new;
-		new->next = NULL;
+		ft_lstlast(new)->next = NULL;
 	}
 }

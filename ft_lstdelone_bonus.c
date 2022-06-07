@@ -6,9 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:11:05 by almelo            #+#    #+#             */
-/*   Updated: 2022/06/03 16:19:28 by almelo           ###   ########.fr       */
+/*   Updated: 2022/06/06 22:42:29 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {

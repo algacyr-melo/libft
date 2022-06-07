@@ -6,9 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:20:02 by almelo            #+#    #+#             */
-/*   Updated: 2022/06/03 16:27:07 by almelo           ###   ########.fr       */
+/*   Updated: 2022/06/06 23:34:05 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
@@ -23,4 +25,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		free(node);
 		node = temp;
 	}
+	ft_lstdelone(node, &free);
+	*lst = NULL;
 }
