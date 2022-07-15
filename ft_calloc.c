@@ -22,8 +22,6 @@ void	*ft_calloc(size_t count, size_t size)
 		count = 1;
 		size = 1;
 	}
-	if (count >= SIZE_MAX && size >= SIZE_MAX)
-		return (0);
 	buffer = malloc(count * size);
 	if (!buffer)
 		return (0);
