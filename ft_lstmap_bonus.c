@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 13:29:46 by almelo            #+#    #+#             */
-/*   Updated: 2022/05/31 17:55:47 by almelo           ###   ########.fr       */
-/*   Updated: 2022/05/26 11:08:33 by almelo           ###   ########.fr       */
+/*   Created: 2022/06/03 16:32:00 by almelo            #+#    #+#             */
+/*   Updated: 2022/06/07 00:05:28 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	void	*buffer;
+	t_list	*list_head;
+	t_list	*node;
 
-	if (count == 0 || size == 0)
+	list_head = NULL;
+	while (lst)
 	{
-		count = 1;
-		size = 1;
+		node = ft_lstnew((*f)(lst->content));
+		if (node == NULL)
+			ft_lstclear(&list_head, (*del));
+		ft_lstadd_back(&list_head, node);
+		lst = lst->next;
 	}
-	buffer = malloc(count * size);
-	if (!buffer)
-		return (0);
-	ft_bzero(buffer, (count * size));
-	return (buffer);
+	return (list_head);
 }
