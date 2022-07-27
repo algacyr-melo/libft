@@ -44,23 +44,6 @@ static void	ft_fill_buffer(char *buffer, int n, unsigned int is_negative)
 	*(buffer + i) = '\0';
 }
 
-static void	ft_strrev(char *s)
-{
-	unsigned int	i;
-	unsigned int	mirror_i;
-	char			temp;
-
-	i = 0;
-	while (i < (ft_strlen(s) / 2))
-	{
-		mirror_i = (ft_strlen(s) - 1) - i;
-		temp = *(s + i);
-		*(s + i) = *(s + mirror_i);
-		*(s + mirror_i) = temp;
-		i++;
-	}
-}
-
 char	*ft_itoa(int n)
 {
 	char			*buffer;
