@@ -15,14 +15,16 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*buffer;
-	size_t	b_size;
+	char	*new_s;
+	size_t	len_s1;
+	size_t	len_s2;
 
-	b_size = ft_strlen(s1) + ft_strlen(s2) + 1;
-	buffer = ft_calloc(b_size, sizeof(*s1));
-	if (!buffer)
-		return (0);
-	ft_strlcpy(buffer, s1, b_size);
-	ft_strlcat(buffer, s2, b_size);
-	return (buffer);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	new_s = malloc((len_s1 + len_s2 + 1) * sizeof(char));
+	if (new_s == NULL)
+		return (NULL);
+	ft_memcpy(new_s, s1, len_s1 + 1);
+	ft_memcpy(new_s + len_s1, s2, len_s2 + 1);
+	return (new_s);
 }
