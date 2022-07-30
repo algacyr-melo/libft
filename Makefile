@@ -7,7 +7,7 @@ SRCS =	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-		ft_printf.c ft_printf_utils.c ft_strrev.c \
+		ft_printf.c ft_printf_utils.c ft_strrev.c get_next_line.c \
 
 
 SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
@@ -22,10 +22,13 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-$(NAME): $(OBJECTS) libft.h ft_printf.h
+$(NAME): $(OBJECTS) bonus libft.h ft_printf.h get_next_line.h
 	ar -r $(NAME) $(OBJECTS)
 
-all: $(NAME)  
+bonus: $(OBJECTS_BONUS) libft.h
+	ar -r $(NAME) $(OBJECTS_BONUS)
+
+all: $(NAME) 
 
 .c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
@@ -38,7 +41,4 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJECTS_BONUS) libft.h
-	ar -r $(NAME) $(OBJECTS_BONUS)
-
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
