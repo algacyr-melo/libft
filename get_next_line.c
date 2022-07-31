@@ -70,15 +70,3 @@ char	*get_next_line(int fd)
 	free(after_nl);
 	return (line);
 }
-
-#include <fcntl.h>
-int	main(void)
-{
-	int		fd;
-	char	*line_next;
-
-	fd = open("README.md", O_RDONLY);
-	while ((line_next = get_next_line(fd)))
-		ft_printf("%s", line_next);
-	return (0);
-}
