@@ -6,7 +6,7 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:57:07 by almelo            #+#    #+#             */
-/*   Updated: 2022/10/06 16:05:12 by almelo           ###   ########.fr       */
+/*   Updated: 2022/10/26 18:02:27 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strcmp(const char *s1, const char *s2)
 	i = 0;
 	while (*(s1 + i) || *(s2 + i))
 	{
-		if (*(u_s1 + i) != *(u_s2+ i))
+		if (*(u_s1 + i) != *(u_s2 + i))
 			return (*(u_s1 + i) - *(u_s2 + i));
 		i++;
 	}
