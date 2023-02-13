@@ -6,11 +6,11 @@
 /*   By: almelo <almelo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:18:27 by almelo            #+#    #+#             */
-/*   Updated: 2023/02/13 16:15:06 by almelo           ###   ########.fr       */
+/*   Updated: 2023/02/13 16:22:52 by almelo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/libft.h"
+#include "libft.h"
 
 void	ft_strrev(char *s)
 {
@@ -29,9 +29,4 @@ void	ft_strrev(char *s)
 		*(s + i_mirror) = temp;
 		i++;
 	}
-}
-
-int	main(void)
-{
-	ft_strrev("Hello, world");
 }
